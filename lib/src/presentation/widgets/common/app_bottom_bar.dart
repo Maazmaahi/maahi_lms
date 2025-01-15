@@ -1,4 +1,4 @@
-part of widgets;
+part of '../widgets.dart';
 
 const double _kActiveFontSize = 14.0;
 const double _kBottomMargin = 8.0;
@@ -7,7 +7,7 @@ enum AppBottomBarFabLocation { end, center }
 
 class AppBottomBar extends StatefulWidget {
   AppBottomBar({
-    Key? key,
+    super.key,
     required this.items,
     this.onTap,
     this.currentIndex = 0,
@@ -28,8 +28,7 @@ class AppBottomBar extends StatefulWidget {
           'Every item must have a non-null title',
         ),
         assert(0 <= currentIndex! && currentIndex < items.length),
-        assert(iconSize != null),
-        super(key: key);
+        assert(iconSize != null);
 
   final List<AppBottomBarItem> items;
   final ValueChanged<int?>? onTap;
@@ -159,13 +158,13 @@ class _BottomNavigationTile extends StatelessWidget {
 
 class _TileIcon extends StatelessWidget {
   const _TileIcon({
-    Key? key,
+    super.key,
     required this.colorTween,
     required this.animation,
     required this.iconSize,
     required this.selected,
     required this.item,
-  }) : super(key: key);
+  });
 
   final ColorTween colorTween;
   final Animation<double> animation;
@@ -200,11 +199,11 @@ class _TileIcon extends StatelessWidget {
 
 class _Label extends StatelessWidget {
   const _Label({
-    Key? key,
+    super.key,
     required this.animation,
     required this.item,
     required this.color,
-  }) : super(key: key);
+  });
 
   final Animation<double> animation;
   final AppBottomBarItem item;
@@ -388,7 +387,7 @@ class BottomNavigationBarState extends State<AppBottomBar> with TickerProviderSt
   Widget build(BuildContext context) {
     assert(debugCheckHasDirectionality(context));
     assert(debugCheckHasMaterialLocalizations(context));
-    final double additionalBottomPadding = math.max(MediaQuery.of(context).padding.bottom - _kBottomMargin, 0.0);
+    final double additionalBottomPadding = max(MediaQuery.of(context).padding.bottom - _kBottomMargin, 0.0);
     return Semantics(
         explicitChildNodes: true,
         child: widget.hasNotch

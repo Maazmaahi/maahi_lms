@@ -1,4 +1,4 @@
-part of widgets;
+part of '../widgets.dart';
 
 enum ActionIconPosition { start, end }
 
@@ -10,8 +10,8 @@ class SubHeader extends StatelessWidget {
     this.actionIconSize = 14.5,
     this.actionIconPosition = ActionIconPosition.end,
     this.onPressed,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String title;
   final String? actionLabel;

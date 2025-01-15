@@ -58,4 +58,8 @@ class UserProfile {
         "phone": phone,
         "updatedAt": updatedAt?.toUtc(),
       };
+
+  String get fullName {
+    return "$firstname ${lastname ?? ""}".trim();
+  }
 }

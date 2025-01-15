@@ -1,0 +1,12 @@
+export 'courses/courses_screen.dart';
+export 'forget_password/forget_password_screen.dart';
+export 'home/home_screen.dart';
+export 'intro/intro_screen.dart';
+export 'landing/landing_screen.dart';
+export 'live_courses/live_courses_screen.dart';
+export 'login/login_screen.dart';
+export 'onboarding/onboarding_screen.dart';
+export 'otp/otp_screen.dart';
+export 'profile/profile_screen.dart';
+export 'register/register_screen.dart';
+export 'splash/splash_screen.dart';

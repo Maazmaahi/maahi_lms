@@ -1,4 +1,4 @@
-part of widgets;
+part of '../widgets.dart';
 
 class AppPullRefresh extends StatelessWidget {
   const AppPullRefresh({
@@ -6,8 +6,8 @@ class AppPullRefresh extends StatelessWidget {
     required this.child,
     this.color = AppColors.blue,
     this.backgroundColor = AppColors.white,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final Widget child;
   final Future<void> Function() onRefresh;
   final Color? color;

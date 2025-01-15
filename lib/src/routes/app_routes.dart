@@ -1,10 +1,50 @@
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
-import 'package:maahi_lms/src/presentation/screens/exports.dart';
+import 'package:maahi_lms/src/presentation/screens/screens.dart';
+import 'package:maahi_lms/src/routes/app_router.dart';
 import 'package:maahi_lms/src/routes/routes_name.dart';
 
 class AppRoutes {
+  static final routes = <RouteBase>[
+    GoRoute(
+      name: RoutesName.forgetPassword,
+      path: RoutesName.forgetPassword,
+      builder: (_, __) => const ForgetPasswordScreen(),
+    ),
+    GoRoute(
+      name: RoutesName.intro,
+      path: RoutesName.intro,
+      builder: (_, __) => const IntroScreen(),
+      redirect: AppRouter.loginRedirect,
+    ),
+    GoRoute(
+      name: RoutesName.login,
+      path: RoutesName.login,
+      builder: (_, __) => const LoginScreen(),
+    ),
+    GoRoute(
+      name: RoutesName.onboarding,
+      path: RoutesName.onboarding,
+      builder: (_, __) => const OnboardingScreen(),
+    ),
+    GoRoute(
+      name: RoutesName.otp,
+      path: RoutesName.otp,
+      builder: (_, __) => const OtpScreen(),
+    ),
+    GoRoute(
+      name: RoutesName.register,
+      path: RoutesName.register,
+      builder: (_, __) => const RegisterScreen(),
+    ),
+    GoRoute(
+      name: RoutesName.splash,
+      path: RoutesName.splash,
+      builder: (_, __) => const SplashScreen(),
+    ),
+  ].toList(growable: false);
+
   static final mainMenuRoutes = <RouteBase>[
     GoRoute(
       name: RoutesName.home,

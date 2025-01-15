@@ -5,7 +5,7 @@ final usersJSON = [
     "profile": {
       "firstname": "Maaz",
       "lastname": "Maahi",
-      "username": "faisalramdan17",
+      "username": "maazmaahi",
       "email": "maahimaaz007@gmail.com",
       "phone": "+91 123-123-1234",
       "avatarURL": "https://lh3.googleusercontent.com/a/ACg8ocILiIImC6ViFLyxVtPF-GhCtnAn3at9P4hkHz2mZACnBcYpi9Eq=s432-c-no",
@@ -37,7 +37,7 @@ final usersJSON = [
       "name": "Basic",
       "level": 1,
       "exp": 50,
-      "progress": 17,
+      "progress": 37,
       "goal": 100,
     },
     "createdAt": DateTime.now().toIso8601String(),

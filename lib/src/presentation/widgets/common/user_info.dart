@@ -1,8 +1,8 @@
-part of widgets;
+part of '../widgets.dart';
 
 class UserInfo extends StatelessWidget {
   const UserInfo({
-    Key? key,
+    super.key,
     this.title,
     this.titleStyle,
     this.subtitle,
@@ -11,7 +11,7 @@ class UserInfo extends StatelessWidget {
     this.maxRadius = 12,
     this.expanded = true,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   final String? title;
   final TextStyle? titleStyle;
