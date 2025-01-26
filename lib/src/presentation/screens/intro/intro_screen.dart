@@ -27,6 +27,7 @@ class IntroScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.colorScheme;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -49,20 +50,22 @@ class IntroScreen extends StatelessWidget {
               children: [
                 AppRoundedButton(
                   onPressed: () {
-                    context.go(RoutesName.home);
+                    // context.go(RoutesName.home);
                   },
                   label: "Next",
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
+                    Text(
                       "Do you have an account?",
-                      style: p17,
+                      style: p17.copyWith(color: colorScheme.onSurface),
                     ),
                     const SizedBox(width: 4),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.go(RoutesName.login);
+                      },
                       child: const Text(
                         "Login",
                         style: p17,

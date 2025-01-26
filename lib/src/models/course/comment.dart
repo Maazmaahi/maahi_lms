@@ -1,4 +1,4 @@
-import 'package:maahi_lms/src/models/user/user.dart';
+part of "../models.dart";
 
 class Comment {
   final int id;

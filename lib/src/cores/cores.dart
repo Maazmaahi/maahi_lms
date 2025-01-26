@@ -1,11 +1,14 @@
 library core;
 
+import 'dart:convert';
+
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:maahi_lms/src/ext/animated_dialog/dialog.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../presentation/widgets/widgets.dart';
 
@@ -16,6 +19,7 @@ part 'extensions/datetime.dart';
 part 'extensions/int.ext.dart';
 part 'extensions/string.dart';
 part 'extensions/text_style.dart';
+part 'local_storage/local_storage.dart';
 part 'styles/app_colors.dart';
 part 'styles/app_fonts.dart';
 part 'styles/app_icons.dart';

@@ -7,19 +7,20 @@ class MyCourseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.colorScheme;
     return Container(
       margin:
           const EdgeInsets.only(right: 18.5, left: 18.5, top: 4, bottom: 20),
       padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 17),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: colorScheme.surface,
         borderRadius: BorderRadius.circular(20),
         image: DecorationImage(
           image: AssetImage(Assets.images.blackBackground),
           fit: BoxFit.fill,
         ),
         boxShadow: [
-          BoxShadow(color: Colors.grey[200]!, blurRadius: 8),
+          BoxShadow(color: colorScheme.shadow, blurRadius: 8),
         ],
       ),
       child: Column(

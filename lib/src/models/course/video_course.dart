@@ -1,6 +1,4 @@
-import 'comment.dart';
-import 'course.dart';
-import 'teacher.dart';
+part of "../models.dart";
 
 class VideoCourse extends Course {
   final String previewVideoUrl;

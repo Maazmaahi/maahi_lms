@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:maahi_lms/src/cores/cores.dart';
 import 'package:maahi_lms/src/data/dummies/live_courses_dummy.dart';
 import 'package:maahi_lms/src/ext/animated_dialog/dialog.dart';
-import 'package:maahi_lms/src/models/course/live_course.dart';
+import 'package:maahi_lms/src/models/models.dart';
 import 'package:maahi_lms/src/presentation/widgets/widgets.dart';
 import 'package:transparent_image/transparent_image.dart';
 

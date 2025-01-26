@@ -49,6 +49,25 @@ dependencies:
   share_plus: ^10.1.4
   awesome_snackbar_content: ^0.1.5
   lottie: ^3.2.0
+  path_provider: ^2.0.0
+  image_picker: ^0.8.4
+  file_picker: ^5.0.1
+  path: ^1.7.0
+  equatable: ^2.0.0 # If you are using equatable for comparison in BLoC
+  json_serializable: ^6.0.1
+  freezed: ^2.0.0
+  carousel_slider: ^5.0.0
+  flutter_rating_bar: ^4.0.1
+  pinput: ^5.0.0
+  shared_preferences: ^2.3.4
+  flutter_secure_storage: ^9.2.2
+  font_awesome_flutter: ^10.8.0
+  photo_view: ^0.15.0
+  flutter_bloc: ^8.0.0
+  bloc: ^8.1.4
+  freezed_annotation: ^2.0.0
+  get_it: ^7.2.0
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +79,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
+  build_runner: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

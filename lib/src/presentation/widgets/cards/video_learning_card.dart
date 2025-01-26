@@ -27,8 +27,9 @@ class VideoLearningCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const textGreyStyle = TextStyle(color: AppColors.grey, fontSize: 15);
-    const textInVideoStyle = TextStyle(color: Colors.white, fontSize: 17);
+    final colorScheme = context.colorScheme;
+    final textGreyStyle = p15.grey;
+    final textInVideoStyle = p17.white;
     const radius = 20.00;
 
     return Padding(
@@ -39,13 +40,10 @@ class VideoLearningCard extends StatelessWidget {
         child: Ink(
           padding: padding,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: colorScheme.surface,
             borderRadius: BorderRadius.circular(radius),
             boxShadow: [
-              BoxShadow(
-                color: Colors.grey[300]!,
-                blurRadius: 1.5,
-              ),
+              BoxShadow(color: colorScheme.shadow, blurRadius: 4),
             ],
           ),
           child: Column(
@@ -96,7 +94,7 @@ class VideoLearningCard extends StatelessWidget {
                       children: [
                         const Icon(
                           Icons.play_circle_outline,
-                          color: Colors.white,
+                          color: AppColors.white,
                           size: 18,
                         ),
                         const SizedBox(width: 4),
@@ -121,7 +119,7 @@ class VideoLearningCard extends StatelessWidget {
                       title,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
-                      style: const TextStyle(fontSize: 20),
+                      style: p20.copyWith(color: colorScheme.onSurface),
                     ),
                     const SizedBox(height: 15),
                     SingleChildScrollView(

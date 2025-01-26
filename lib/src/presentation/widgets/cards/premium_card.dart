@@ -83,7 +83,7 @@ class PremiumCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                         gradient: const LinearGradient(
                           colors: [
-                            AppColors.lightyellow,
+                            AppColors.lightYellow,
                             AppColors.yellow,
                           ],
                         ),

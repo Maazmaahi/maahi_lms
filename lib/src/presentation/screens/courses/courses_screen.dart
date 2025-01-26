@@ -3,9 +3,10 @@ import 'package:maahi_lms/src/presentation/widgets/widgets.dart';
 import 'package:maahi_lms/src/cores/cores.dart';
 import 'package:maahi_lms/src/data/dummies/categories_dummy.dart';
 import 'package:maahi_lms/src/data/dummies/video_courses_dummy.dart';
-import 'package:maahi_lms/src/models/course/video_course.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ionicons/ionicons.dart';
+
+import '../../../models/models.dart';
 
 class CoursesScreen extends StatefulWidget {
 
@@ -126,7 +127,8 @@ class _MenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const radius = 17.00;
+    final colorScheme = context.colorScheme;
+    const radius = 15.00;
 
     return Column(
       children: [
@@ -152,7 +154,7 @@ class _MenuButton extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Text(
             title,
-            style: const TextStyle(fontSize: 13.5),
+            style: p14.copyWith(color: colorScheme.onSurface),
           ),
         ),
       ],

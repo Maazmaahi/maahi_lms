@@ -1,4 +1,4 @@
-part of 'user.dart';
+part of "../models.dart";
 
 class UserProfile {
   final String firstname;

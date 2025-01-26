@@ -1,4 +1,4 @@
-import 'sentence.dart';
+part of "../models.dart";
 
 class Learning {
   final int id;

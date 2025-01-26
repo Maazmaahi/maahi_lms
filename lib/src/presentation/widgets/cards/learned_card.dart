@@ -13,24 +13,20 @@ class LearnedCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderRadius = BorderRadius.circular(20);
+    final colorScheme = context.colorScheme;
 
     return Padding(
       padding: const EdgeInsets.only(right: 18, left: 18, bottom: 20, top: 8),
       child: InkWell(
         onTap: onPressed,
-        borderRadius: borderRadius,
         child: Ink(
           padding: const EdgeInsets.all(14),
           height: 120,
           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: borderRadius,
+            color: colorScheme.surface,
+            borderRadius: BorderRadius.circular(20),
             boxShadow: [
-              BoxShadow(
-                color: Colors.grey[200]!,
-                blurRadius: 10,
-              ),
+              BoxShadow(color: colorScheme.shadow, blurRadius: 10),
             ],
           ),
           child: Row(
@@ -41,7 +37,7 @@ class LearnedCard extends StatelessWidget {
                 height: 65,
                 decoration: BoxDecoration(
                   color: const Color(0xFF2F80ED).withOpacity(0.3),
-                  borderRadius: BorderRadius.circular(17),
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: SvgPicture.asset(
                   Assets.iconsSVG.calendar,
@@ -67,17 +63,14 @@ class LearnedCard extends StatelessWidget {
                             RichText(
                               text: TextSpan(
                                 text: currentLearned.toString(),
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black87,
-                                  fontSize: 26,
+                                style: p26.bold.copyWith(
+                                  color: colorScheme.onSurface,
                                 ),
                                 children: [
                                   TextSpan(
                                     text: "/$targetLearned",
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 19,
+                                    style: p19.bold.copyWith(
+                                      color: colorScheme.onSurface,
                                     ),
                                   ),
                                 ],
@@ -89,6 +82,7 @@ class LearnedCard extends StatelessWidget {
                               style: context.theme.textTheme.headlineSmall
                                   ?.copyWith(
                                 fontSize: 20,
+                                color: colorScheme.onSurface,
                               ),
                             ),
                           ],
@@ -111,10 +105,7 @@ class LearnedCard extends StatelessWidget {
                 child: Center(
                   child: Text(
                     "${(currentLearned / targetLearned * 100).round()}%",
-                    style: const TextStyle(
-                      fontSize: 14.5,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: p15.bold.copyWith(color: colorScheme.onSurface),
                   ),
                 ),
               ),

@@ -8,13 +8,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:lottie/lottie.dart';
-import 'package:maahi_lms/src/cores/cores.dart';
-import 'package:maahi_lms/src/models/course/live_course.dart';
-import 'package:maahi_lms/src/models/course/video_course.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:transparent_image/transparent_image.dart';
+
+import '../../cores/cores.dart';
+import '../../models/models.dart';
 
 part 'buttons/app_rounded_button.dart';
 part 'cards/item_list_card.dart';
@@ -33,3 +33,4 @@ part 'common/photo_avatar.dart';
 part 'common/sub_header.dart';
 part 'common/user_info.dart';
 part 'dialogs/confirm_dialog.dart';
+part 'text_field/app_text_form_field.dart';

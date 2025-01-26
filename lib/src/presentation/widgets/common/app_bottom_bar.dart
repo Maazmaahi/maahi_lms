@@ -174,8 +174,9 @@ class _TileIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final iconColor = item.iconColor ?? Colors.black54;
-    final backgroundColor = item.backgroundColor ?? context.theme.colorScheme.primary;
+    final colorScheme = context.colorScheme;
+    final iconColor = item.iconColor ?? colorScheme.secondary;
+    final backgroundColor = item.backgroundColor ?? colorScheme.primary;
 
     return Align(
       alignment: Alignment.topCenter,

@@ -1,6 +1,4 @@
-part 'user_leveling.dart';
-
-part 'user_profile.dart';
+part of "../models.dart";
 
 class User {
   final String uid;

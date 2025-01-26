@@ -1,3 +1,5 @@
+part of "../models.dart";
+
 class Teacher {
   final int id;
   final String name;

@@ -15,15 +15,22 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
+    final isLoggedIn = LocalStorage.getBool(LocalStorage.isLoggedIn);
     Future.delayed(const Duration(seconds: 2), () {
-      context.go(RoutesName.intro);
+      if (isLoggedIn) {
+        context.go(RoutesName.home);
+      } else {
+        context.go(RoutesName.intro);
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    final theme = context.theme;
+    return Scaffold(
+      backgroundColor: theme.primaryColor,
+      body: const Center(
         child: Text("Course"),
       ),
     );

@@ -1,4 +1,4 @@
-import 'word.dart';
+part of "../models.dart";
 
 class Sentence {
   final String text;

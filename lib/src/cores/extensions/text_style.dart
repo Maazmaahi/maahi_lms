@@ -1,4 +1,4 @@
-part of core;
+part of '../cores.dart';
 
 extension TextStyleExtension on TextStyle {
   //Font Weight
@@ -21,7 +21,7 @@ extension TextStyleExtension on TextStyle {
   // Font Color
   TextStyle get primaryColor => copyWith(color: AppColors.lightPrimaryColor);
   TextStyle get red => copyWith(color: AppColors.appRed);
-  TextStyle get lightYellow => copyWith(color: AppColors.lightyellow);
+  TextStyle get lightYellow => copyWith(color: AppColors.lightYellow);
   TextStyle get yellow => copyWith(color: AppColors.yellow);
   TextStyle get white => copyWith(color: Colors.white);
   TextStyle get black => copyWith(color: AppColors.black);

@@ -16,11 +16,11 @@ class NewCourseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const TextStyle textInVideoStyle =
-        TextStyle(color: Colors.white, fontSize: 16);
+    final colorScheme = context.colorScheme;
+    final TextStyle textInVideoStyle = p16.white;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 7),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       child: GestureDetector(
         onTap: () => onPressed(),
         child: Stack(
@@ -54,8 +54,8 @@ class NewCourseCard extends StatelessWidget {
                   gradient: LinearGradient(
                     colors: [
                       Colors.transparent,
-                      Colors.black.withOpacity(0.3),
-                      Colors.black.withOpacity(0.7),
+                      colorScheme.onSurface.withOpacity(0.3),
+                      colorScheme.onSurface.withOpacity(0.7),
                     ],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -69,7 +69,7 @@ class NewCourseCard extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
                 decoration: BoxDecoration(
-                    color: Colors.amber,
+                    color: colorScheme.primary,
                     borderRadius: BorderRadius.circular(15)),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 2)

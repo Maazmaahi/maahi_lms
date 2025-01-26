@@ -1,3 +1,5 @@
+part of "../models.dart";
+
 class Word {
   final int id;
   final String name;

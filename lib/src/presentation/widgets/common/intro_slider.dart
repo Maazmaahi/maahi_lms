@@ -58,6 +58,7 @@ class _IntroSliderState extends State<IntroSlider> {
   }
 
   Widget buildImagesPage() {
+    final colorScheme = context.colorScheme;
     return PageView(
       physics: const BouncingScrollPhysics(),
       onPageChanged: (value) => selectedImageNotifier.value = value,
@@ -86,7 +87,7 @@ class _IntroSliderState extends State<IntroSlider> {
                         ),
                 ),
                 const SizedBox(height: 55),
-                Text(item.title, style: p23.bold, textAlign: TextAlign.center),
+                Text(item.title, style: p23.bold.copyWith(color: colorScheme.onSurface), textAlign: TextAlign.center),
                 const SizedBox(height: 22),
                 Text(item.subTitle,
                     style: p16.grey, textAlign: TextAlign.center),
@@ -105,7 +106,7 @@ class _IntroSliderState extends State<IntroSlider> {
       height: 8,
       width: isActive ? 20 : 8,
       decoration: BoxDecoration(
-        color: isActive ? Colors.black : Colors.grey[400],
+        color: isActive ? const Color(0xFF42A5F5) : Colors.grey[400],
         borderRadius: BorderRadius.circular(4),
       ),
     );

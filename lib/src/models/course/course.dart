@@ -1,4 +1,4 @@
-import 'teacher.dart';
+part of "../models.dart";
 
 abstract class Course {
   final int id;

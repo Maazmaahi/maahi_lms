@@ -1,7 +1,7 @@
 part of '../cores.dart';
 
 const kTextColor = Color(0xFF1E2432);
-// const kTextGreyColor = Color(0xFF909090);
+const kTextGreyColor = Color(0xFF909090);
 const kTextMediumColor = Color(0xFF53627C);
 const kTextLightColor = Color(0xFFACB1C0);
 const kInactiveChartColor = Color(0xFFEAECEF);
@@ -22,20 +22,30 @@ class AppColors {
   static const white = Color(0xFFF7F7F8);
 
   static const green = Color(0xff29C195);
-  static const lightyellow = Color(0xFFF9EF8F);
+  static const lightYellow = Color(0xFFF9EF8F);
   static const yellow = Color(0xffF0BF41);
 
   static const lightScaffoldBackgroundColor = Color(0xFFF7F7F8);
+  static const darkScaffoldBackgroundColor = Colors.black;
   static const lightBackgroundColor = Color(0XFFFFFFFF);
-  static const lightPrimaryColor = Color(0xFF42A5F5); // Color(0xFF2F80ED);
+  static const darkBackgroundColor = Color(0XFF000000);
+  static const lightPrimaryColor = Color(0xFF42A5F5);
+  static const darkPrimaryColor = Color(0xFF42A5F5);
   static const lightPrimaryContainer = Color(0xFFEEF0F3);
+  static const darkPrimaryContainer = Color(0xFFEEF0F3);
+  static Color lightShadowColor = Colors.grey[300]!;
+  static Color darkShadowColor = Colors.grey[300]!;
 
-  static const darkPrimaryColor = Colors.white24;
-  static const darkPrimaryVariantColor = Colors.black;
-  static const darkSecondaryColor = Colors.white;
+  // static const darkPrimaryColor = Colors.white24;
+  // static const lightPrimaryVariantColor = Colors.black54;
+  // static const darkPrimaryVariantColor = Colors.white70;
+  static const lightSecondaryColor = Colors.black54;
+  static const darkSecondaryColor = Colors.white70;
+  static const lightOnPrimaryColor = Colors.black;
   static const darkOnPrimaryColor = Colors.white;
 
-  static const Color iconColor = lightPrimaryColor;
+  static const Color lightIconColor = lightPrimaryColor;
+  static const Color darkIconColor = lightPrimaryColor;
 
   static const appBlue1 = Color(0xff3682DB);
   static const appBlue2 = Color(0xff154C8D);

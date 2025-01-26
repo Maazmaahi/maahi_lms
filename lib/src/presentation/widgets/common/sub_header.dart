@@ -22,6 +22,7 @@ class SubHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.colorScheme;
     final icon = Icon(
       actionIcon ?? Icons.arrow_forward_ios,
       size: actionIconSize,
@@ -33,7 +34,7 @@ class SubHeader extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(title, style: p19.bold),
+            Text(title, style: p19.bold.copyWith(color: colorScheme.onSurface)),
             if (onPressed != null || onPressed != null || onPressed != null)
               InkWell(
                 onTap: onPressed,

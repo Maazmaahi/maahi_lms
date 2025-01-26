@@ -1,13 +1,16 @@
 import 'package:badges/badges.dart' as b;
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:maahi_lms/src/cores/cores.dart';
 import 'package:maahi_lms/src/data/dummies/users_dummy.dart';
 import 'package:maahi_lms/src/data/dummies/video_courses_dummy.dart';
+import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 
-import '../../../models/course/video_course.dart';
-import '../../../models/user/user.dart';
+import '../../../models/models.dart';
+import '../../../providers/providers.dart';
+import '../../../routes/routes_name.dart';
 import '../../widgets/widgets.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -78,6 +81,7 @@ class _ProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.colorScheme;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
@@ -86,7 +90,7 @@ class _ProfileHeader extends StatelessWidget {
             photoURL: user.profile.avatarURL,
             membership: user.membership,
             progress: user.leveling.progress,
-            color: context.theme.primaryColor,
+            color: colorScheme.primary,
           ),
           Expanded(
             child: Padding(
@@ -96,7 +100,10 @@ class _ProfileHeader extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 1.7),
-                    child: Text(user.profile.fullName, style: p21.bold),
+                    child: Text(
+                      user.profile.fullName,
+                      style: p21.bold.copyWith(color: colorScheme.onSurface),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 1.7),
@@ -139,52 +146,52 @@ class _MenuButtons extends StatefulWidget {
 }
 
 class _MenuButtonsState extends State<_MenuButtons> {
-  final lightModeNotifier = ValueNotifier<bool>(false);
+  // final lightModeNotifier = ValueNotifier<bool>(false);
 
   @override
   void dispose() {
-    lightModeNotifier.dispose();
+    // lightModeNotifier.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.colorScheme;
     return Padding(
       padding: const EdgeInsets.only(bottom: 20, right: 20, left: 20),
       child: Ink(
         padding: const EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: colorScheme.surface,
           borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(color: colorScheme.shadow, blurRadius: 0.05),
+          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 10),
-              child: Text("Other", style: p20.bold),
+              child: Text("Other",
+                  style: p20.bold.copyWith(color: colorScheme.onSurface)),
             ),
-            ItemListCard(
-              onPressed: () =>
-                  lightModeNotifier.value = !lightModeNotifier.value,
-              icon: LineIcons.sunAlt,
-              name: "Light Mode",
-              iconSize: 26.5,
-              trailing: SizedBox(
-                height: 17,
-                child: ValueListenableBuilder(
-                  valueListenable: lightModeNotifier,
-                  builder: (_, lightModel, __) {
-                    return Switch.adaptive(
-                      value: lightModel,
-                      onChanged: (value) {
-                        lightModeNotifier.value = value;
-                      },
-                    );
-                  },
+            Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
+              print("Hello consumer");
+              return ItemListCard(
+                onPressed: () {},
+                icon: LineIcons.sunAlt,
+                name: "Light Mode",
+                iconSize: 26.5,
+                trailing: SizedBox(
+                  height: 17,
+                  child: Switch.adaptive(
+                    value: themeProvider.isDark,
+                    onChanged: themeProvider.toggleTheme,
+                  ),
                 ),
-              ),
-            ),
+              );
+            }),
             ItemListCard(
               onPressed: () => Share.share("Hey I found a best education app"),
               icon: LineIcons.gift,
@@ -227,7 +234,10 @@ class _ActionButton extends StatelessWidget {
             context: context,
             content: "Are you sure to sign out?",
             lottiePath: LottiePath.thinking,
-            onYesClicked: () {},
+            onYesClicked: () {
+              LocalStorage.setBool("isLoggedIn", false);
+              context.go(RoutesName.login);
+            },
           );
         },
         style: ElevatedButton.styleFrom(

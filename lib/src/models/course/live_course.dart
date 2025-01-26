@@ -1,5 +1,4 @@
-import 'course.dart';
-import 'teacher.dart';
+part of "../models.dart";
 
 class LiveCourse extends Course {
   final String liveStreamingUrl;

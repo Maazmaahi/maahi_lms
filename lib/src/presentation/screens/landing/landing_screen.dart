@@ -15,15 +15,17 @@ class LandingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.colorScheme;
     return SafeArea(
       child: Scaffold(
         body: child,
         bottomNavigationBar: AppBottomBar(
+          backgroundColor: colorScheme.surface,
           opacity: .2,
           currentIndex: _calculateSelectedIndex(context),
           onTap: (int? index) => _onTap(context, index ?? 0),
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(23)),
-          elevation: 8,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+          elevation: 10,
           hasInk: true,
           //new, gives a cute ink effect
           items: _navigationItems,

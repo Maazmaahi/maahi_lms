@@ -12,20 +12,19 @@ class VideoCourseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const radius = 20.0;
+    final colorScheme = context.colorScheme;
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: InkWell(
         onTap: () => onPressed(),
-        borderRadius: BorderRadius.circular(radius),
         child: Ink(
           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(radius),
+            color: colorScheme.surface,
+            borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: Colors.grey[300]!,
+                color: colorScheme.shadow,
                 blurRadius: 3,
               ),
             ],
@@ -40,7 +39,7 @@ class VideoCourseCard extends StatelessWidget {
                   errorWidget: (context, url, error) => const SizedBox(),
                   imageBuilder: (context, assetProvider) {
                     return ClipRRect(
-                      borderRadius: const BorderRadius.vertical(top: Radius.circular(radius)),
+                      borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
                       child: FadeInImage(
                         placeholder: MemoryImage(kTransparentImage),
                         image: assetProvider,
@@ -59,7 +58,7 @@ class VideoCourseCard extends StatelessWidget {
                       item.title.overflow,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: p20.bold,
+                      style: p20.bold.copyWith(color: colorScheme.onSurface),
                     ),
                     const SizedBox(height: 15),
                     Row(

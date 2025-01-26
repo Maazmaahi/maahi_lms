@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maahi_lms/src/presentation/widgets/widgets.dart';
 import 'package:maahi_lms/src/cores/cores.dart';
 import 'package:maahi_lms/src/data/dummies/learnings_dummy.dart';
-import 'package:maahi_lms/src/models/learning/learning.dart';
+import 'package:maahi_lms/src/models/models.dart';
 import 'package:ionicons/ionicons.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -129,6 +129,7 @@ class _HomeTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.colorScheme;
     return Container(
       color: context.theme.scaffoldBackgroundColor,
       padding: const EdgeInsets.symmetric(vertical: 8),
@@ -147,7 +148,7 @@ class _HomeTabBar extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 4.0, right: 15, left: 15),
                   margin: const EdgeInsets.symmetric(horizontal: 2.0),
                   decoration: BoxDecoration(
-                    color: !isActivated ? null : context.theme.primaryColor,
+                    color: !isActivated ? null : colorScheme.primary,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Center(
@@ -155,7 +156,7 @@ class _HomeTabBar extends StatelessWidget {
                       item,
                       style: TextStyle(
                         fontSize: 19.5,
-                        color: !isActivated ? null : Colors.white,
+                        color: !isActivated ? colorScheme.onSurface : colorScheme.surface,
                       ),
                     ),
                   ),

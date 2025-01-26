@@ -24,6 +24,7 @@ class UserInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.colorScheme;
     return InkWell(
       onTap: onPressed,
       borderRadius: BorderRadius.circular(8),
