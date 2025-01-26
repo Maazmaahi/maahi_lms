@@ -177,11 +177,11 @@ class _MenuButtonsState extends State<_MenuButtons> {
                   style: p20.bold.copyWith(color: colorScheme.onSurface)),
             ),
             Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
-              print("Hello consumer");
               return ItemListCard(
                 onPressed: () {},
-                icon: LineIcons.sunAlt,
-                name: "Light Mode",
+                icon:
+                    themeProvider.isDark ? LineIcons.moonAlt : LineIcons.sunAlt,
+                name: "Dark Mode",
                 iconSize: 26.5,
                 trailing: SizedBox(
                   height: 17,

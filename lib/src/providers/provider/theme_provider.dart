@@ -16,7 +16,6 @@ class ThemeProvider extends BaseProvider {
   }
 
   void toggleTheme(bool isDark) {
-    log("isDark in setTheme :- $isDark");
     setState(ViewState.busy);
     if (isDark) {
       saveTheme(true);
